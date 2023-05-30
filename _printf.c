@@ -1,40 +1,42 @@
 #include "main.h"
+
 void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - custom Printf function
- * @formfier: the format specifier
+ * @form: the format string
  * Return: the number of characters Printed
  */
-int _printf(const char *formfier, ...)
+
+int _printf(const char *form, ...)
 {
-	int h, printed = 0, printed_chars = 0;
+	int k, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
 
-	if (formfier == NULL)
+	if (form == NULL)
 
 		return (-1);
-	va_start(list, formfier);
-	for (h = 0; formfier && formfier[h] != '\0'; h++)
+	va_start(list, form);
+	for (k = 0; form && form[k] != '\0'; k++)
 	{
-		if (formfier[h] != '%')
+		if (form[k] != '%')
 		{
-			buffer[buff_ind++] = formfier[h];
+			buffer[buff_ind++] = form[k];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
-			/* write(1, &formfier[h], 1);*/
+			/* write(1, &form[k], 1);*/
 			printed_chars++;
 		}
 		else
 		{
 			print_buffer(buffer, &buff_ind);
-			flags = get_flags(formfier, &h);
-			width = get_width(formfier, &h, list);
-			precision = get_precision(formfier, &h, list);
-			size = get_size(formfier, &h);
-			++h;
-			printed = handle_print(formfier, &h, list, buffer,
+			flags = get_flags(form, &k);
+			width = get_width(form, &k, list);
+			precision = get_precision(form, &k, list);
+			size = get_size(form, &k);
+			++k;
+			printed = handle_print(form, &k, list, buffer,
 				flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
