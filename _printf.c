@@ -12,15 +12,15 @@ int _printf(const char *formfier, ...)
 	va_list list;
 	char buffer[BUFF_SIZE];
 
-	if (format == NULL)
+	if (formfier == NULL)
 
 		return (-1);
 	va_start(list, formfier);
-	for (h = 0; form && formfier[h] != '\0'; h++)
+	for (h = 0; formfier && formfier[h] != '\0'; h++)
 	{
 		if (formfier[h] != '%')
 		{
-			buffer[buff_ind++] = form[h];
+			buffer[buff_ind++] = formfier[h];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
 			/* write(1, &formfier[h], 1);*/
@@ -46,14 +46,13 @@ int _printf(const char *formfier, ...)
 	return (printed_chars);
 }
 /**
- * print_buffray - Prints the contents of the buffer if it exist
- * @buffray: Array of chars
+ * print_buffer - Prints the contents of the buffer if it exist
+ * @buffer: Array of chars
  * @buff_ind: Index at which to add next char, represents the length.
  */
-void print_buffray(char buffray[], int *buff_ind)
+void print_buffer(char buffer[], int *buff_ind)
 {
 	if (*buff_ind > 0)
-		write(1, &buffray[0], *buff_ind);
+		write(1, &buffer[0], *buff_ind);
 	*buff_ind = 0;
 }
-
