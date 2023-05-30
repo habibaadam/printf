@@ -1,6 +1,6 @@
 #include "main.h"
 
-/******************* WRITE HANDLER ********************/
+/****************** WRITE HANDLER ********************/
 /**
   * handle_write_char - prints a character
   * @c: char to be printed
