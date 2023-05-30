@@ -17,7 +17,7 @@ int get_flags(const char *format, int *r)
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
 	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
-	for (j = *i + 1; format[j] != '\0'; j++)
+	for (j = *r + 1; format[j] != '\0'; j++)
 	{
 		for (l = 0; FLAGS_CH[l] != '\0'; l++)
 			if (format[j] == FLAGS_CH[l])

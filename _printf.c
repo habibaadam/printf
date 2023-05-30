@@ -12,11 +12,11 @@ int _printf(const char *formfier, ...)
 	va_list list;
 	char buffer[BUFF_SIZE];
 
-	if (format == NULL)
+	if (formfier == NULL)
 
 		return (-1);
 	va_start(list, formfier);
-	for (h = 0; form && formfier[h] != '\0'; h++)
+	for (h = 0; formfier && formfier[h] != '\0'; h++)
 	{
 		if (formfier[h] != '%')
 		{

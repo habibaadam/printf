@@ -122,7 +122,7 @@ int print_int(va_list types, char buffer[],
 		buffer[o--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	num = (unsigned long int)n;
+	num = (unsigned long int)q;
 
 	if (q < 0)
 	{
@@ -166,7 +166,7 @@ int print_binary(va_list types, char buffer[],
 	UNUSED(size);
 
 	n = va_arg(types, unsigned int);
-	m = 2147483648; /* (2 ^ 31) */
+	p = 2147483648; /* (2 ^ 31) */
 	j[0] = n / p;
 	for (y = 1; y < 32; y++)
 	{
