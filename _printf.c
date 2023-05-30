@@ -20,7 +20,7 @@ int _printf(const char *formfier, ...)
 	{
 		if (formfier[h] != '%')
 		{
-			buffer[buff_ind++] = form[h];
+			buffer[buff_ind++] = formfier[h];
 			if (buff_ind == BUFF_SIZE)
 				print_buffer(buffer, &buff_ind);
 			/* write(1, &formfier[h], 1);*/

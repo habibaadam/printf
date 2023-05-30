@@ -170,7 +170,7 @@ int print_binary(va_list types, char buffer[],
 	j[0] = n / p;
 	for (y = 1; y < 32; y++)
 	{
-		m /= 2;
+		p /= 2;
 		j[y] = (n / p) % 2;
 	}
 	for (y = 0, sum = 0, count = 0; y < 32; y++)

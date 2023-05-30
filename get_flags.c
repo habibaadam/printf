@@ -30,7 +30,7 @@ int get_flags(const char *format, int *r)
 			break;
 	}
 
-	*i = j - 1;
+	*r = j - 1;
 
 	return (flags);
 }
