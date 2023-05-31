@@ -1,9 +1,9 @@
 # printf
 printf team project
 
-# Team mates
-Habiba Adams
+# Team Work
+Habiba Adam
 Liza Gyamaa Oppong
 
-# Requirement
-Write your own printf function.
+# Requirements
+Write your own printf function
